@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Knobelspiel - Lösung</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 30px;
+    }
+    #bilder {
+      display: none;
+      margin-top: 20px;
+    }
+    #fehlertext {
+      color: red;
+      margin-top: 10px;
+      display: none;
+    }
+    img {
+      max-width: 300px;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Knobelspiel - Lösung</h1>
+  <p>Bitte gib das Passwort ein, um die Lösungen zu sehen:</p>
+  <input type="password" id="passwort" placeholder="Passwort eingeben">
+  <button onclick="checkPasswort()">Bestätigen</button>
+
+  <p id="fehlertext">Das stimmt nicht. Entweder hast du dich vertippt oder du schummelst.</p>
+
+  <div id="bilder">
+    <h2>Die Lösungen:</h2>
+    <img src="Lösung1.png" alt="Lösung 1">
+    <img src="Lösung2.png" alt="Lösung 2">
+    <img src="Lösungen.png" alt="Alle Lösungen">
+  </div>
+
+  <script>
+    function checkPasswort() {
+      const eingabe = document.getElementById("passwort").value;
+      const fehlerText = document.getElementById("fehlertext");
+      if (eingabe === "Knobelspiel_Lösung_3010") {
+        document.getElementById("bilder").style.display = "block";
+        fehlerText.style.display = "none";
+      } else {
+        fehlerText.style.display = "block";
+        document.getElementById("bilder").style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
